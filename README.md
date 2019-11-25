@@ -1,3 +1,7 @@
+<p>My fork of yii2-export adds the possibility to change encoding of the output txt and csv files (by using "encoding" option and iconv).</p>
+<p>Created to simply generate Excel-compatibile CSV files (in e.g. WINDOWS-1250 encoding)</p>
+<br />
+
 <h1 align="center">
     <a href="http://demos.krajee.com" title="Krajee Demos" target="_blank">
         <img src="http://kartik-v.github.io/bootstrap-fileinput-samples/samples/krajee-logo-b.png" alt="Krajee Logo"/>
