@@ -802,6 +802,15 @@ class ExportMenu extends GridView
             $this->clearOutputBuffers();
         }
         $writer->save($file);
+        //==========================
+		$extype = $this->_exportType;
+		if ($this->encoding != self::ENCODING_UTF8 && ($extype === self::FORMAT_CSV || $extype === self::FORMAT_TEXT)) {
+			$toconv = file_get_contents($file);
+			$afterconv = iconv('UTF-8', $this->encoding, $toconv);
+			file_put_contents($file.'temp', $afterconv);
+			rename($file.'temp', $file);
+		}		
+		//==========================
         if ($this->stream) {
             $this->setHttpHeaders();
             $this->clearOutputBuffers();
