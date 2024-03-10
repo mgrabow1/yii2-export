@@ -111,7 +111,7 @@
                     return $('<textarea/>', {'name': name}).val(value).hide();
                 };
             frmConfig = $.extend(true, {}, cfg.formOptions, {
-                action: window.location.href,
+                action: cfg.formOptions.action ?? window.location.href,
                 target: cfg.target,
                 method: 'post',
                 css: {display: 'none'}
